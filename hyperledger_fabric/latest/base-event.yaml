@@ -19,6 +19,7 @@ services:
       service: ca.org1.example.com
     environment:
       - FABRIC_CA_SERVER_TLS_ENABLED=false
+      - GODEBUG=netdns=go
 
   ca.org2.example.com: # ca node for org1
     extends:
@@ -26,6 +27,7 @@ services:
       service: ca.org2.example.com
     environment:
       - FABRIC_CA_SERVER_TLS_ENABLED=false
+      - GODEBUG=netdns=go
 
   orderer.example.com:  # orderer node for example org
     extends:
@@ -33,6 +35,7 @@ services:
       service: orderer.example.com
     environment:
       - ORDERER_GENERAL_TLS_ENABLED=false
+      - GODEBUG=netdns=go
 
   cli: # client node
     extends:
@@ -41,6 +44,7 @@ services:
     environment:
       #- GOPATH=/opt/gopath
       - CORE_PEER_TLS_ENABLED=false  # to enable TLS, change to false
+      - GODEBUG=netdns=go
 
 ## following are peer nodes ##
 
@@ -50,6 +54,7 @@ services:
       service: peer0.org1.example.com
     environment:
       - CORE_PEER_TLS_ENABLED=false
+      - GODEBUG=netdns=go
 
   peer1.org1.example.com:
     extends:
@@ -57,6 +62,7 @@ services:
       service: peer1.org1.example.com
     environment:
       - CORE_PEER_TLS_ENABLED=false
+      - GODEBUG=netdns=go
 
   peer0.org2.example.com:
     extends:
@@ -64,6 +70,7 @@ services:
       service: peer0.org2.example.com
     environment:
       - CORE_PEER_TLS_ENABLED=false
+      - GODEBUG=netdns=go
 
   peer1.org2.example.com:
     extends:
@@ -71,6 +78,7 @@ services:
       service: peer1.org2.example.com
     environment:
       - CORE_PEER_TLS_ENABLED=false
+      - GODEBUG=netdns=go
 
   event-listener:
     extends:
