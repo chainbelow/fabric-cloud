@@ -26,6 +26,7 @@ services:
     - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org1.example.com:7051
     - CORE_PEER_LOCALMSPID=Org1MSP
     - CORE_PEER_TLS_ENABLED=true
+    - GODEBUG=netdns=go
     volumes:
     - ./solo/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/msp:/etc/hyperledger/fabric/msp
     - ./solo/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls:/etc/hyperledger/fabric/tls
@@ -46,6 +47,7 @@ services:
     - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org1.example.com:7051
     - CORE_PEER_LOCALMSPID=Org1MSP
     - CORE_PEER_TLS_ENABLED=true
+    - GODEBUG=netdns=go
     volumes:
     - ./solo/crypto-config/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/msp:/etc/hyperledger/fabric/msp
     - ./solo/crypto-config/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/tls:/etc/hyperledger/fabric/tls
@@ -66,6 +68,7 @@ services:
     - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org2.example.com:7051
     - CORE_PEER_LOCALMSPID=Org2MSP
     - CORE_PEER_TLS_ENABLED=true
+    - GODEBUG=netdns=go
     volumes:
     - ./solo/crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/msp:/etc/hyperledger/fabric/msp
     - ./solo/crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls:/etc/hyperledger/fabric/tls
@@ -86,6 +89,7 @@ services:
     - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org2.example.com:7051
     - CORE_PEER_LOCALMSPID=Org2MSP
     - CORE_PEER_TLS_ENABLED=true
+    - GODEBUG=netdns=go
     volumes:
     - ./solo/crypto-config/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/msp:/etc/hyperledger/fabric/msp
     - ./solo/crypto-config/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/tls:/etc/hyperledger/fabric/tls
