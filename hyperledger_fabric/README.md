@@ -1,7 +1,16 @@
-# Hyperledger Fabric Playground
+# Hyperledger Fabric
 This is a fork from forked from yeasy/docker-compose-files. This project provides several useful Docker-Compose script to help quickly bootup a Hyperledger Fabric network, and do simple testing with deploy, invoke and query transactions.
 
 Hyperledger Fabric all releases from v0.6 to latest v1.3 are supported.
+
+# Installation
+## Operating System
+* http://releases.ubuntu.com/16.04/
+## Prerequisites
+* curl -O https://hyperledger.github.io/composer/v0.19/prereqs-ubuntu.sh
+* chmod u+x prereqs-ubuntu.sh
+* ./prereqs-ubuntu.sh
+
 
 ## Supported Fabric Releases
 
