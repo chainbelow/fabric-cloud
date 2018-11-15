@@ -1,13 +1,7 @@
 # Hyperledger Fabric Playground
+This is a fork from forked from yeasy/docker-compose-files. This project provides several useful Docker-Compose script to help quickly bootup a Hyperledger Fabric network, and do simple testing with deploy, invoke and query transactions.
 
-This project provides several useful Docker-Compose script to help quickly bootup a Hyperledger Fabric network, and do simple testing with deploy, invoke and query transactions.
-
-Currently we support Hyperledger Fabric all releases from v0.6 to latest v1.x.
-
-If you're not familiar with Docker and Blockchain, can have a look at these books (in CN):
-
-* [Docker Practice](https://github.com/yeasy/docker_practice)
-* [Blockchain Guide](https://github.com/yeasy/blockchain_guide)
+Hyperledger Fabric all releases from v0.6 to latest v1.3 are supported.
 
 ## Supported Fabric Releases
 
@@ -26,18 +20,16 @@ Fabric Release | Description
 
 ## Getting Started
 
-### TLDR
-RELEASE=v1.3.0
+### Start here
 
 ```bash
+RELEASE=v1.3.0
 $ cd ${RELEASE}; make setup test
 ```
 
-More details are releaved below.
+### Pick a fabric version
 
-### Pick up a fabric version
-
-Enter the subdir of specific version and setup, e.g.,
+Change into the sub folder of specific version and setup
 
 ```bash
 $ cd ${RELEASE} # select a fabric version
