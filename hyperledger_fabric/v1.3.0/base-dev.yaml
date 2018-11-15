@@ -21,6 +21,7 @@ services:
       - ORDERER_KAFKA_RETRY_SHORTINTERVAL=1s
       - ORDERER_KAFKA_RETRY_SHORTTOTAL=30s
       - ORDERER_KAFKA_VERBOSE=true
+      - GODEBUG=netdns=go
     volumes:
       - $GOPATH/src/github.com/hyperledger/fabric:/go/src/github.com/hyperledger/fabric
       # for solo case
@@ -47,6 +48,7 @@ services:
       - CORE_PEER_CHAINCODELISTENADDRESS=peer0.org1.example.com:7052
       - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org1.example.com:7051
       - CORE_PEER_LOCALMSPID=Org1MSP
+      - GODEBUG=netdns=go
     volumes:
       - $GOPATH/src/github.com/hyperledger/fabric:/go/src/github.com/hyperledger/fabric
       # solo mode configuration
@@ -72,6 +74,7 @@ services:
     hostname: fabric-cli
     tty: true
     environment:
+      - GODEBUG=netdns=go
       - CORE_PEER_ID=fabric-cli
       - CORE_PEER_ADDRESS=peer0.org1.example.com:7051 # default to operate on peer0.org1
       - CORE_PEER_LOCALMSPID=Org1MSP
