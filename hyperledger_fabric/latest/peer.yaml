@@ -16,6 +16,7 @@ services:
       - CORE_PEER_CHAINCODELISTENADDRESS=peer0.org1.example.com:7052 # chaincode
       - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org1.example.com:7051 # gossip
       - CORE_PEER_LOCALMSPID=Org1MSP
+      - GODEBUG=netdns=go
     volumes:
       - ./crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/msp:/etc/hyperledger/fabric/msp
       - ./crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls:/etc/hyperledger/fabric/tls
@@ -32,6 +33,7 @@ services:
       - CORE_PEER_CHAINCODELISTENADDRESS=peer0.org1.example.com:7052
       - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org1.example.com:7051
       - CORE_PEER_LOCALMSPID=Org1MSP
+      - GODEBUG=netdns=go
     volumes:
         - ./crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/msp:/etc/hyperledger/fabric/msp
         - ./crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls:/etc/hyperledger/fabric/tls
