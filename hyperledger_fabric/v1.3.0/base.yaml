@@ -22,6 +22,7 @@ services:
     restart: always
     network_mode: ${NETWORK}
     environment:
+      - GODEBUG=netdns=go
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_TLS_ENABLED=true # change to false to disable TLS
 
@@ -31,6 +32,7 @@ services:
     network_mode: ${NETWORK}
     # Default config can be found at https://github.com/hyperledger/fabric/blob/master/orderer/common/localconfig/config.go
     environment:
+      - GODEBUG=netdns=go
       - ORDERER_GENERAL_LOGLEVEL=INFO  # default: INFO
       - ORDERER_GENERAL_LOGFORMAT=%{color}[%{id:03x} %{time:01-02 15:04:05.00 MST}] [%{longpkg}] %{callpath} -> %{level:.4s}%{color:reset} %{message}
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0 # default: 127.0.0.1
@@ -62,7 +64,8 @@ services:
     restart: always
     network_mode: ${NETWORK}
     environment:
-      - CORE_LOGGING_LEVEL=INFO
+      - GODEBUG=netdns=go
+      - FABRIC_LOGGING_SPEC=INFO
       - CORE_PEER_ADDRESSAUTODETECT=false
       - CORE_LOGGING_FORMAT=%{color}[%{id:03x} %{time:01-02 15:04:05.00 MST}] [%{longpkg}] %{callpath} -> %{level:.4s}%{color:reset} %{message}
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=${NETWORK}  # uncomment this to use specific network
@@ -93,7 +96,8 @@ services:
     network_mode: ${NETWORK}
     tty: true
     environment:
-      - CORE_LOGGING_LEVEL=DEBUG
+      - FABRIC_LOGGING_SPEC=DEBUG
+      - GODEBUG=netdns=go
       - CORE_LOGGING_FORMAT=%{color}[%{id:03x} %{time:01-02 15:04:05.00 MST}] [%{module}] %{shortfunc} -> %{level:.4s}%{color:reset} %{message}
       - CORE_PEER_TLS_ENABLED=true  # to enable TLS, change to true
       - ORDERER_CA=/etc/hyperledger/fabric/crypto-config/ordererOrganizations/example.com/orderers/orderer0.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
@@ -107,8 +111,9 @@ services:
     network_mode: ${NETWORK}
     tty: true
     environment:
+      - GODEBUG=netdns=go
       - CORE_PEER_ID=fabric-event-listener
-      - CORE_LOGGING_LEVEL=DEBUG
+      - FABRIC_LOGGING_SPEC=DEBUG
       - CORE_PEER_TLS_ENABLED=false  # event-listener doesn't support TLS
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     #command: bash -c 'block-listener -events-address=peer0.org1.example.com:7053 -events-mspdir=/etc/hyperledger/fabric/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/msp/ -events-mspid=Org1MSP'
@@ -132,6 +137,7 @@ services:
     network_mode: ${NETWORK}
     tty: true
     environment:
+      - GODEBUG=netdns=go
       - KAFKA_MESSAGE_MAX_BYTES=1048576 # 1 * 1024 * 1024 B
       - KAFKA_REPLICA_FETCH_MAX_BYTES=1048576 # 1 * 1024 * 1024 B
       - KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE=false
