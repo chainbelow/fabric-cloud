@@ -34,7 +34,7 @@ all: test
 
 test:
 	@echo "Run test with $(COMPOSE_FILE)"
-	@echo "Please make sure u have setup Docker and pulled images by 'make setup download'."
+	@echo "Please ensure you have setup Docker and pulled images by 'make setup download'."
 
 	make ready  # Run all testing till ready
 
