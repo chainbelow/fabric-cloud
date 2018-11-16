@@ -17,6 +17,7 @@ services:
     environment:
       - COUCHDB_USER=
       - COUCHDB_PASSWORD=
+      - GODEBUG=netdns=go
     # Comment/Uncomment the port mapping if you want to hide/expose the CouchDB service,
     # for example map it to utilize Fauxton User Interface in dev environments.
     ports:
@@ -33,6 +34,7 @@ services:
       # match the username and password set for the associated CouchDB.
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
+      - GODEBUG=netdns=go
     depends_on:
       - couchdb4
 
@@ -44,6 +46,7 @@ services:
     environment:
       - COUCHDB_USER=
       - COUCHDB_PASSWORD=
+      - GODEBUG=netdns=go
     # Comment/Uncomment the port mapping if you want to hide/expose the CouchDB service,
     # for example map it to utilize Fauxton User Interface in dev environments.
     ports:
@@ -60,5 +63,6 @@ services:
       # match the username and password set for the associated CouchDB.
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
+      - GODEBUG=netdns=go
     depends_on:
       - couchdb5

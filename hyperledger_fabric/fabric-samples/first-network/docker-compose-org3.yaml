@@ -20,6 +20,7 @@ services:
       file: base/peer-base.yaml
       service: peer-base
     environment:
+      - GODEBUG=netdns=go
       - CORE_PEER_ID=peer0.org3.example.com
       - CORE_PEER_ADDRESS=peer0.org3.example.com:7051
       - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org3.example.com:7051
@@ -41,6 +42,7 @@ services:
       file: base/peer-base.yaml
       service: peer-base
     environment:
+      - GODEBUG=netdns=go
       - CORE_PEER_ID=peer1.org3.example.com
       - CORE_PEER_ADDRESS=peer1.org3.example.com:7051
       - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org3.example.com:7051
@@ -64,6 +66,7 @@ services:
     tty: true
     stdin_open: true
     environment:
+      - GODEBUG=netdns=go
       - GOPATH=/opt/gopath
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
       - CORE_LOGGING_LEVEL=INFO
