@@ -8,7 +8,7 @@
 # set the default Docker namespace and tag
 DOCKER_NS=hyperledger
 ARCH=amd64
-VERSION=1.2.1
+VERSION=1.2.0-stable
 BASE_DOCKER_TAG=amd64-0.4.10
 
 # set of Hyperledger Fabric images
