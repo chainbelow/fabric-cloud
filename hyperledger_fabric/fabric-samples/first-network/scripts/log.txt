@@ -1,0 +1,129 @@
+[36m2018-11-14 20:54:42.578 UTC [viperutil] getKeysRecursively -> DEBU 001[0m Found map[string]interface{} value for peer.BCCSP
+[36m2018-11-14 20:54:42.579 UTC [viperutil] getKeysRecursively -> DEBU 002[0m Found map[string]interface{} value for peer.BCCSP.PKCS11
+[36m2018-11-14 20:54:42.579 UTC [viperutil] unmarshalJSON -> DEBU 003[0m Unmarshal JSON: value is not a string: <nil>
+[36m2018-11-14 20:54:42.579 UTC [viperutil] getKeysRecursively -> DEBU 004[0m Found real value for peer.BCCSP.PKCS11.Library setting to <nil> <nil>
+[36m2018-11-14 20:54:42.579 UTC [viperutil] unmarshalJSON -> DEBU 005[0m Unmarshal JSON: value is not a string: <nil>
+[36m2018-11-14 20:54:42.579 UTC [viperutil] getKeysRecursively -> DEBU 006[0m Found real value for peer.BCCSP.PKCS11.Label setting to <nil> <nil>
+[36m2018-11-14 20:54:42.579 UTC [viperutil] unmarshalJSON -> DEBU 007[0m Unmarshal JSON: value is not a string: <nil>
+[36m2018-11-14 20:54:42.579 UTC [viperutil] getKeysRecursively -> DEBU 008[0m Found real value for peer.BCCSP.PKCS11.Pin setting to <nil> <nil>
+[36m2018-11-14 20:54:42.579 UTC [viperutil] unmarshalJSON -> DEBU 009[0m Unmarshal JSON: value is not a string: <nil>
+[36m2018-11-14 20:54:42.579 UTC [viperutil] getKeysRecursively -> DEBU 00a[0m Found real value for peer.BCCSP.PKCS11.Hash setting to <nil> <nil>
+[36m2018-11-14 20:54:42.580 UTC [viperutil] unmarshalJSON -> DEBU 00b[0m Unmarshal JSON: value is not a string: <nil>
+[36m2018-11-14 20:54:42.580 UTC [viperutil] getKeysRecursively -> DEBU 00c[0m Found real value for peer.BCCSP.PKCS11.Security setting to <nil> <nil>
+[36m2018-11-14 20:54:42.580 UTC [viperutil] getKeysRecursively -> DEBU 00d[0m Found map[string]interface{} value for peer.BCCSP.PKCS11.FileKeyStore
+[36m2018-11-14 20:54:42.580 UTC [viperutil] unmarshalJSON -> DEBU 00e[0m Unmarshal JSON: value is not a string: <nil>
+[36m2018-11-14 20:54:42.580 UTC [viperutil] getKeysRecursively -> DEBU 00f[0m Found real value for peer.BCCSP.PKCS11.FileKeyStore.KeyStore setting to <nil> <nil>
+[36m2018-11-14 20:54:42.580 UTC [viperutil] unmarshalJSON -> DEBU 010[0m Unmarshal JSON: value cannot be unmarshalled: invalid character 'S' looking for beginning of value
+[36m2018-11-14 20:54:42.580 UTC [viperutil] getKeysRecursively -> DEBU 011[0m Found real value for peer.BCCSP.Default setting to string SW
+[36m2018-11-14 20:54:42.580 UTC [viperutil] getKeysRecursively -> DEBU 012[0m Found map[string]interface{} value for peer.BCCSP.SW
+[36m2018-11-14 20:54:42.580 UTC [viperutil] unmarshalJSON -> DEBU 013[0m Unmarshal JSON: value cannot be unmarshalled: invalid character 'S' looking for beginning of value
+[36m2018-11-14 20:54:42.580 UTC [viperutil] getKeysRecursively -> DEBU 014[0m Found real value for peer.BCCSP.SW.Hash setting to string SHA2
+[36m2018-11-14 20:54:42.580 UTC [viperutil] unmarshalJSON -> DEBU 015[0m Unmarshal JSON: value is not a string: 256
+[36m2018-11-14 20:54:42.580 UTC [viperutil] getKeysRecursively -> DEBU 016[0m Found real value for peer.BCCSP.SW.Security setting to int 256
+[36m2018-11-14 20:54:42.581 UTC [viperutil] getKeysRecursively -> DEBU 017[0m Found map[string]interface{} value for peer.BCCSP.SW.FileKeyStore
+[36m2018-11-14 20:54:42.581 UTC [viperutil] unmarshalJSON -> DEBU 018[0m Unmarshal JSON: value cannot be unmarshalled: unexpected end of JSON input
+[36m2018-11-14 20:54:42.581 UTC [viperutil] getKeysRecursively -> DEBU 019[0m Found real value for peer.BCCSP.SW.FileKeyStore.KeyStore setting to string 
+[36m2018-11-14 20:54:42.581 UTC [viperutil] EnhancedExactUnmarshalKey -> DEBU 01a[0m map[peer.BCCSP:map[Default:SW SW:map[Hash:SHA2 Security:256 FileKeyStore:map[KeyStore:]] PKCS11:map[Library:<nil> Label:<nil> Pin:<nil> Hash:<nil> Security:<nil> FileKeyStore:map[KeyStore:<nil>]]]]
+[36m2018-11-14 20:54:42.581 UTC [bccsp_sw] openKeyStore -> DEBU 01b[0m KeyStore opened at [/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore]...done
+[36m2018-11-14 20:54:42.581 UTC [bccsp] initBCCSP -> DEBU 01c[0m Initialize BCCSP [SW]
+[36m2018-11-14 20:54:42.581 UTC [msp] getPemMaterialFromDir -> DEBU 01d[0m Reading directory /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts
+[36m2018-11-14 20:54:42.581 UTC [msp] getPemMaterialFromDir -> DEBU 01e[0m Inspecting file /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/Admin@org1.example.com-cert.pem
+[36m2018-11-14 20:54:42.581 UTC [msp] getPemMaterialFromDir -> DEBU 01f[0m Reading directory /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/cacerts
+[36m2018-11-14 20:54:42.581 UTC [msp] getPemMaterialFromDir -> DEBU 020[0m Inspecting file /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/cacerts/ca.org1.example.com-cert.pem
+[36m2018-11-14 20:54:42.581 UTC [msp] getPemMaterialFromDir -> DEBU 021[0m Reading directory /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/admincerts
+[36m2018-11-14 20:54:42.581 UTC [msp] getPemMaterialFromDir -> DEBU 022[0m Inspecting file /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/admincerts/Admin@org1.example.com-cert.pem
+[36m2018-11-14 20:54:42.581 UTC [msp] getPemMaterialFromDir -> DEBU 023[0m Reading directory /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/intermediatecerts
+[36m2018-11-14 20:54:42.581 UTC [msp] getMspConfig -> DEBU 024[0m Intermediate certs folder not found at [/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/intermediatecerts]. Skipping. [stat /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/intermediatecerts: no such file or directory]
+[36m2018-11-14 20:54:42.581 UTC [msp] getPemMaterialFromDir -> DEBU 025[0m Reading directory /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/tlscacerts
+[36m2018-11-14 20:54:42.581 UTC [msp] getPemMaterialFromDir -> DEBU 026[0m Inspecting file /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/tlscacerts/tlsca.org1.example.com-cert.pem
+[36m2018-11-14 20:54:42.581 UTC [msp] getPemMaterialFromDir -> DEBU 027[0m Reading directory /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/tlsintermediatecerts
+[36m2018-11-14 20:54:42.581 UTC [msp] getMspConfig -> DEBU 028[0m TLS intermediate certs folder not found at [/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/tlsintermediatecerts]. Skipping. [stat /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/tlsintermediatecerts: no such file or directory]
+[36m2018-11-14 20:54:42.581 UTC [msp] getPemMaterialFromDir -> DEBU 029[0m Reading directory /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/crls
+[36m2018-11-14 20:54:42.581 UTC [msp] getMspConfig -> DEBU 02a[0m crls folder not found at [/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/crls]. Skipping. [stat /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/crls: no such file or directory]
+[36m2018-11-14 20:54:42.581 UTC [msp] getMspConfig -> DEBU 02b[0m MSP configuration file not found at [/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/config.yaml]: [stat /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/config.yaml: no such file or directory]
+[36m2018-11-14 20:54:42.582 UTC [msp] newBccspMsp -> DEBU 02c[0m Creating BCCSP-based MSP instance
+[36m2018-11-14 20:54:42.582 UTC [msp] New -> DEBU 02d[0m Creating Cache-MSP instance
+[36m2018-11-14 20:54:42.582 UTC [msp] loadLocaMSP -> DEBU 02e[0m Created new local MSP
+[36m2018-11-14 20:54:42.582 UTC [msp] Setup -> DEBU 02f[0m Setting up MSP instance Org1MSP
+[36m2018-11-14 20:54:42.582 UTC [msp/identity] newIdentity -> DEBU 030[0m Creating identity instance for cert -----BEGIN CERTIFICATE-----
+MIICRDCCAeqgAwIBAgIRAPtprGPM2k1z4UryGW1bCKIwCgYIKoZIzj0EAwIwczEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMTE2Nh
+Lm9yZzEuZXhhbXBsZS5jb20wHhcNMTgxMTE0MjAwMzMxWhcNMjgxMTExMjAwMzMx
+WjBzMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMN
+U2FuIEZyYW5jaXNjbzEZMBcGA1UEChMQb3JnMS5leGFtcGxlLmNvbTEcMBoGA1UE
+AxMTY2Eub3JnMS5leGFtcGxlLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IA
+BFWvMcfaDIyYpTzKoBnkOXC4HOyhn2BgB9SeLS/m3M7nFb+8oDiZ9URp4Jb37fPh
+ClZ3lXSWOLuf6MuSsn6IZZGjXzBdMA4GA1UdDwEB/wQEAwIBpjAPBgNVHSUECDAG
+BgRVHSUAMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEILjh+aBqoXxumC9Z7hP2
+b1NhE/FN7UAqxNqgc4Rbs6sTMAoGCCqGSM49BAMCA0gAMEUCIQDOKCB6/23U0b77
+QtLqkwO8OgF9j11lr0NIiTlEqNropQIgIdFMnKVY7X6YiOiVgreO3KVXAM4N86Ho
+wS4lzA3CYUA=
+-----END CERTIFICATE-----
+[36m2018-11-14 20:54:42.582 UTC [msp/identity] newIdentity -> DEBU 031[0m Creating identity instance for cert -----BEGIN CERTIFICATE-----
+MIICKjCCAdGgAwIBAgIRANCe4Ui1nuHUse5HlmgeliIwCgYIKoZIzj0EAwIwczEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMTE2Nh
+Lm9yZzEuZXhhbXBsZS5jb20wHhcNMTgxMTE0MjAwMzMyWhcNMjgxMTExMjAwMzMy
+WjBsMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMN
+U2FuIEZyYW5jaXNjbzEPMA0GA1UECxMGY2xpZW50MR8wHQYDVQQDDBZBZG1pbkBv
+cmcxLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEJglxhIU1
+P34Y7r6itZ/pT8bjAzXK/T6q4Kj/ntLSIPYQe8up6GAhKhMoNTM9oqVuEFhXEA3e
+2x6TrXMZ6wJB+qNNMEswDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYD
+VR0jBCQwIoAguOH5oGqhfG6YL1nuE/ZvU2ET8U3tQCrE2qBzhFuzqxMwCgYIKoZI
+zj0EAwIDRwAwRAIgFCVkfce+BEpE2VtqpNWOp/NEx+po5HnVuglygNeZFDYCICCZ
+QHzZCe2Oq+dZViN2tk3j133t9vNum12G1k2qo4j5
+-----END CERTIFICATE-----
+[36m2018-11-14 20:54:42.598 UTC [msp/identity] newIdentity -> DEBU 032[0m Creating identity instance for cert -----BEGIN CERTIFICATE-----
+MIICKjCCAdGgAwIBAgIRANCe4Ui1nuHUse5HlmgeliIwCgYIKoZIzj0EAwIwczEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMTE2Nh
+Lm9yZzEuZXhhbXBsZS5jb20wHhcNMTgxMTE0MjAwMzMyWhcNMjgxMTExMjAwMzMy
+WjBsMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMN
+U2FuIEZyYW5jaXNjbzEPMA0GA1UECxMGY2xpZW50MR8wHQYDVQQDDBZBZG1pbkBv
+cmcxLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEJglxhIU1
+P34Y7r6itZ/pT8bjAzXK/T6q4Kj/ntLSIPYQe8up6GAhKhMoNTM9oqVuEFhXEA3e
+2x6TrXMZ6wJB+qNNMEswDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYD
+VR0jBCQwIoAguOH5oGqhfG6YL1nuE/ZvU2ET8U3tQCrE2qBzhFuzqxMwCgYIKoZI
+zj0EAwIDRwAwRAIgFCVkfce+BEpE2VtqpNWOp/NEx+po5HnVuglygNeZFDYCICCZ
+QHzZCe2Oq+dZViN2tk3j133t9vNum12G1k2qo4j5
+-----END CERTIFICATE-----
+[36m2018-11-14 20:54:42.599 UTC [bccsp_sw] loadPrivateKey -> DEBU 033[0m Loading private key [1e09286d99ca8226d767b370e9393e473a4ce167a032c52ed7fd95518fac607c] at [/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/1e09286d99ca8226d767b370e9393e473a4ce167a032c52ed7fd95518fac607c_sk]...
+[36m2018-11-14 20:54:42.599 UTC [msp/identity] newIdentity -> DEBU 034[0m Creating identity instance for cert -----BEGIN CERTIFICATE-----
+MIICKjCCAdGgAwIBAgIRANCe4Ui1nuHUse5HlmgeliIwCgYIKoZIzj0EAwIwczEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMTE2Nh
+Lm9yZzEuZXhhbXBsZS5jb20wHhcNMTgxMTE0MjAwMzMyWhcNMjgxMTExMjAwMzMy
+WjBsMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMN
+U2FuIEZyYW5jaXNjbzEPMA0GA1UECxMGY2xpZW50MR8wHQYDVQQDDBZBZG1pbkBv
+cmcxLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEJglxhIU1
+P34Y7r6itZ/pT8bjAzXK/T6q4Kj/ntLSIPYQe8up6GAhKhMoNTM9oqVuEFhXEA3e
+2x6TrXMZ6wJB+qNNMEswDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYD
+VR0jBCQwIoAguOH5oGqhfG6YL1nuE/ZvU2ET8U3tQCrE2qBzhFuzqxMwCgYIKoZI
+zj0EAwIDRwAwRAIgFCVkfce+BEpE2VtqpNWOp/NEx+po5HnVuglygNeZFDYCICCZ
+QHzZCe2Oq+dZViN2tk3j133t9vNum12G1k2qo4j5
+-----END CERTIFICATE-----
+[36m2018-11-14 20:54:42.599 UTC [msp] setupSigningIdentity -> DEBU 035[0m Signing identity expires at 2028-11-11 20:03:32 +0000 UTC
+[36m2018-11-14 20:54:42.599 UTC [msp] Validate -> DEBU 036[0m MSP Org1MSP validating identity
+Error: flag needs an argument: --cafile
+Usage:
+  peer channel create [flags]
+
+Flags:
+  -c, --channelID string     In case of a newChain command, the channel ID to create. It must be all lower case, less than 250 characters long and match the regular expression: [a-z][a-z0-9.-]*
+  -f, --file string          Configuration transaction file generated by a tool such as configtxgen for submitting to orderer
+  -h, --help                 help for create
+      --outputBlock string   The path to write the genesis block for the channel. (default ./<channelID>.block)
+  -t, --timeout duration     Channel creation timeout (default 5s)
+
+Global Flags:
+      --cafile string                       Path to file containing PEM-encoded trusted certificate(s) for the ordering endpoint
+      --certfile string                     Path to file containing PEM-encoded X509 public key to use for mutual TLS communication with the orderer endpoint
+      --clientauth                          Use mutual TLS when communicating with the orderer endpoint
+      --connTimeout duration                Timeout for client to connect (default 3s)
+      --keyfile string                      Path to file containing PEM-encoded private key to use for mutual TLS communication with the orderer endpoint
+      --logging-level string                Default logging level and overrides, see core.yaml for full syntax
+  -o, --orderer string                      Ordering service endpoint
+      --ordererTLSHostnameOverride string   The hostname override to use when validating the TLS connection to the orderer.
+      --tls                                 Use TLS when communicating with the orderer endpoint
+
