@@ -60,8 +60,8 @@ services:
       - byfn
 
 
-  Org3cli:
-    container_name: Org3cli
+  cli:
+    container_name: cli
     image: hyperledger/fabric-tools:$IMAGE_TAG
     tty: true
     stdin_open: true
@@ -69,6 +69,7 @@ services:
       - GODEBUG=netdns=go
       - GOPATH=/opt/gopath
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+      - FABRIC_LOGGING_SPEC=INFO
       - CORE_LOGGING_LEVEL=INFO
       #- CORE_LOGGING_LEVEL=DEBUG
       - CORE_PEER_ID=Org3cli
