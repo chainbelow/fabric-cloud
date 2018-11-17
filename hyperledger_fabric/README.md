@@ -11,8 +11,7 @@ Hyperledger Fabric all releases from v0.6 to latest v1.3 are supported.
 * chmod u+x prereqs-ubuntu.sh
 * ./prereqs-ubuntu.sh
 
-
-## Supported Fabric Releases
+## Supported Fabric Releases for YEASY Tests
 
 Fabric Release | Description
 --- | ---
@@ -20,12 +19,12 @@ Fabric Release | Description
 [Fabric v1.3.0](v1.3.0/) | stable fabric 1.3.0 release.
 [Fabric v1.2.0](v1.2.0/) | stable fabric 1.2.0 release.
 [Fabric v1.1.0](v1.1.0/) | stable fabric 1.1.0 release.
-[Fabric v1.0.6](v1.0.6/) | fabric v1.0.6 release.
-[Fabric v1.0.5](v1.0.5/) | fabric v1.0.5 release.
-[Fabric v1.0.2](v1.0.2/) | fabric v1.0.2 release.
-[Fabric v1.0.0](v1.0.0/) | fabric v1.0.0 release.
-[Fabric v0.6.0](v0.6.0/) | fabric v0.6.0 release (too old, not recommend to use).
 
+## Supported Fabric Releases for Composer
+[Composer 0.20](fabric-dev-servers/) | latest fabric composer folder.
+
+## Supported Fabric 1.3 Samples 
+[Fabric 1.3 samples](fabric-samples/) | latest fabric 1.3 samples folder.
 
 ## Getting Started
 
