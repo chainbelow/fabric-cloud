@@ -202,6 +202,8 @@ END
 
 **INSTANCE:** Let's check the state of the containers. "docker ps" will show the results. A lot of containers have been used and testes against. There are three instances of couchdb, 2 peers ad two organizations, the cli and others managed by docker.
 
+![alt text](image06.png "Docker Containers")
+
 **INSTANCE:** Let's try a few scenarios with the YEASY or Baohua Yang's configuration. He has some tests that are in the same download. The tests are similar with 2 orgs and 4 peers.
 
 ```
@@ -284,6 +286,8 @@ Update anchors on the fabric network
 
 …
 ```
+
+![alt text](image07.png "Docker Containers")
 
 **INSTANCE:** The docker ps command shows the different containers managed through Docker.
 
@@ -395,12 +399,17 @@ To restart the REST server using the same options, issue the following command:
 ```
 composer-rest-server -c admin@health-plan -n never -u true -d n
 ```
+![alt text](image08.png "Port 3000 opened for REST Service")
 
 **CONSOLE:** Ensure port 3000 is open in the security group that connects to this instance. It is important this issue be resolved at its inception. Port 80 and 443 may be closed, unless the Node.JS code acts simply as a delegate.
+
+![alt text](image09.png "Opening the ports")
 
 **CONSOLE:** If port 3000 is unopened, then one can add a new rule that ensures the port is open to HTTP or TCP communications. At this juncture it is also a good idea to check the IP address that is exposed to Internet, not private. Which implies, all communication to the RESTful interface that you are about to expose will be the internet address: 3000.
 
 **LOCAL:** Open your web browser and type http://[above internet ip address]:3000 and you can view the web application that exposes the blockchain application to accept transactions, add participants and others.
+
+![alt text](image10.png "REST Service")
 
 This opens a new world onto the distributed systems environment. Blockchain systems such as Hyperledger Fabric are mostly machine-to-machine communication. The only intervention comes from introducing a new private network, or adding participants or adding or modifying a smart contract in other words the underlying Chaincode. The ability to interact smart with a set of peers, orderers, Chaincode and CLIs becomes the business case for the next-gen computing standards.
 
