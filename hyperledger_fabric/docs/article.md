@@ -52,14 +52,15 @@ $ chmod 400 alikeys.pem
 
 ```
 $ ssh -i ~/nodejs/alikeys.pem root@xx.xx.xxx.1xx
-
-Welcome to Ubuntu 16.04.4 LTS (GNU/Linux 4.4.0-117-generic x86_64)
-* Documentation: https://help.ubuntu.com
-* Management: https://landscape.canonical.com
-* Support: https://ubuntu.com/advantage
-Welcome to Alibaba Cloud Elastic Compute Service !
-**INSTANCE:** Working as ROOT is not preferred from a security point of view either in development or production. It is time to create a new user, devb (or your user name) and assign it to the SUDO group.
 ```
+>Welcome to Ubuntu 16.04.4 LTS (GNU/Linux 4.4.0-117-generic x86_64)
+>* Documentation: https://help.ubuntu.com
+>* Management: https://landscape.canonical.com
+>* Support: https://ubuntu.com/advantage
+>Welcome to Alibaba Cloud Elastic Compute Service !
+
+
+**INSTANCE:** Working as ROOT is not preferred from a security point of view either in development or production. It is time to create a new user, devb (or your user name) and assign it to the SUDO group.
 
 ```
 $ adduser devb
@@ -76,13 +77,11 @@ $ ./prereqs-ubuntu.sh
 ```
 ### It will install the following
 
-```
-Node: v8.12.0
-npm: 6.4.1
-Docker: Docker version 18.09.0, build 4d60db4
-Docker Compose: docker-compose version 1.13.0, build 1719ceb
-Python: Python 2.7.12
-```
+>* Node: v8.12.0
+>* npm: 6.4.1
+>* Docker: Docker version 18.09.0, build 4d60db4
+>* Docker Compose: docker-compose version 1.13.0, build 1719ceb
+>* Python: Python 2.7.12
 
 **INSTANCE:** Check the node.js and docker version and reboot.
 
@@ -116,12 +115,10 @@ $ sudo mv go /usr/local
 $ sudo nano ~/.profile
 ```
 ### Add the text to the end the .profile file
-```
-export GOROOT=$HOME/go
-export GOPATH=$HOME/work
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-export FABRIC_CFG_PATH=/home/{user}/{install}/hyperledger_fabric/root/config
-```
+>* export GOROOT=$HOME/go
+>* export GOPATH=$HOME/work
+>* export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+>* export FABRIC_CFG_PATH=/home/{user}/{install}/hyperledger_fabric/root/config
 
 ```
 $ source ~/.profile
@@ -345,25 +342,24 @@ Hyperledger Composer PeerAdmin card has been imported, host of fabric specified 
 
 ```
 $ yo hyperledger-composer:businessnetwork
-
-Welcome to the business network generator
-? Business network name: health-plan
-? Description: health plan
-? Author name: devb
-? Author email: devb@linux.com
-? License: Apache-2.0
-? Namespace: com.devb.health
-? Do you want to generate an empty template network? No: generate a populated sample network
-create package.json
-create README.md
-create models/com.devb.health.cto
-create permissions.acl
-create .eslintrc.yml
-create features/sample.feature
-create features/support/index.js
-create test/logic.js
-create lib/logic.js
 ```
+>* *Welcome to the business network generator*
+>* ? Business network name: health-plan
+>* ? Description: health plan
+>* ? Author name: devb
+>* ? Author email: devb@linux.com
+>* ? License: Apache-2.0
+>* ? Namespace: com.devb.health
+>* ? Do you want to generate an empty template network? No: generate a populated sample network
+>+ *create package.json*
+>+ *create README.md*
+>+ *create models/com.devb.health.cto*
+>+ *create permissions.acl*
+>+ *create .eslintrc.yml*
+>+ *create features/sample.feature*
+>+ *create features/support/index.js*
+>+ *create test/logic.js*
+>+ *create lib/logic.js*
 
 ```
 $ cd health-plan
@@ -388,20 +384,18 @@ $ composer network ping --card admin@health-plan
 
 ```
 $ composer-rest-server
-? Enter the name of the business network card to use: admin@health-plan
-? Specify if you want namespaces in the generated REST API: never use namespaces
-? Specify if you want to use an API key to secure the REST API: No
-? Specify if you want to enable authentication for the REST API using Passport: No
-? Specify if you want to enable the explorer test interface: Yes
-? Specify a key if you want to enable dynamic logging: no
-? Specify if you want to enable event publication over WebSockets: No
-? Specify if you want to enable TLS security for the REST API: No
-To restart the REST server using the same options, issue the following command:
 ```
+>* ? Enter the name of the business network card to use: admin@health-plan
+>* ? Specify if you want namespaces in the generated REST API: never use namespaces
+>* ? Specify if you want to use an API key to secure the REST API: No
+>* ? Specify if you want to enable authentication for the REST API using Passport: No
+>* ? Specify if you want to enable the explorer test interface: Yes
+>* ? Specify a key if you want to enable dynamic logging: no
+>* ? Specify if you want to enable event publication over WebSockets: No
+>* ? Specify if you want to enable TLS security for the REST API: No
+>* To restart the REST server using the same options, issue the following command:
+>*      composer-rest-server -c admin@health-plan -n never -u true -d n
 
-```
-composer-rest-server -c admin@health-plan -n never -u true -d n
-```
 ![alt text](image08.png "Port 3000 opened for REST Service")
 
 **CONSOLE:** Ensure port 3000 is open in the security group that connects to this instance. It is important this issue be resolved at its inception. Port 80 and 443 may be closed, unless the Node.JS code acts simply as a delegate.
@@ -416,4 +410,4 @@ composer-rest-server -c admin@health-plan -n never -u true -d n
 
 This opens a new world onto the distributed systems environment. Blockchain systems such as Hyperledger Fabric are mostly machine-to-machine communication. The only intervention comes from introducing a new private network, or adding participants or adding or modifying a smart contract in other words the underlying Chaincode. The ability to interact smart with a set of peers, orderers, Chaincode and CLIs becomes the business case for the next-gen computing standards.
 
-===
+***
