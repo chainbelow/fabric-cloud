@@ -1,4 +1,7 @@
 # **Running Hyperledger Fabric 1.3+ on Alibaba Cloud**
+
+![alt text](image00.png "Running Hyperledger Fabric 1.3")
+
 One of the big challenges a developer is likely to face with Hyperledger Fabric 1.3 or its latest version is how he can move the sandbox environment to a true production. Like most Hyperledger fans, I faced similar hassles running in a production environment. I loved that Alibaba Cloud offers a barebones Ubuntu 16.0.4 64-bit no-frills environment which I can safely assume as a production environment.
 
 Now as I speak, AlibabaCloud EC Instance of 2 VCPU, 4 GB RAM and 40 GB diskspace comes unbridled. You have complete control over it, which is both useful, yet brings other security issues.
