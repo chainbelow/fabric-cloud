@@ -13,11 +13,17 @@ There are three resources you will use while interacting with a cloud instance.
 
 **CONSOLE:** One of the first things you do is define a security group that goes with the instance. Hyperledger Fabric is a bunch of applications that comprises the Blockchain, Kafka, Zookeeper and CouchDB database. Which means clearly that we will keep certain ports open as the network scales and accommodates more peers. Defining the port ranges may result in external communication. It requires port 22 for SSH, 80 preferably is great for HTTP and 443 for HTTPS. Additionally, you may want to open ports that may require you to communicate with CouchDB or ports that Kafka and Zookeeper.
 
+![alt text](image02.png "Change Password")
+
 **CONSOLE:** The next thing you do is to change the password. The EC instance comes with a default password which is great as it is hard to remember and even harder to crack. But I find it easier to set the instance with a password I can remember.
+
+![alt text](image03.png "Security Group")
 
 **CONSOLE:** Remember to restart the server instance after making these changes.
 
 **CONSOLE:** The next thing you do in the console is create a certificate (keys) that you can use to SSH or Telnet into the server instance. Create the SSH keys and its binding to the server. In our case, we created "alikeys.pem" for download and use in SSH.
+
+![alt text](image04.png "Security Group")
 
 **CONSOLE:** Once you have generated the certificates, bind these keys to the server instance. This will ensure your ability to use a local instance to log into the server with these keys. In case you have re-initialized the server, which I have done often, it will be a good idea to re-run the local instance to adapt to the new SSH server environment.
 
@@ -36,6 +42,8 @@ $ chmod 400 alikeys.pem
 ```
 
 **CONSOLE:** Just a quick recap. So far, on your console, you reset the password. Generated the keys and bound them to the server instance. Your names and keys may follow a different nomenclature from the name shown. Allow me to put on my architecture hat on naming conventions. In the cloud, often the instances grow into a large number. Naming them properly will give you the ability to rapidly search and monitor an instance. The naming convention used here is far from it, but having cloud instances for development, staging and production gives you an idea of how you want to qualify the instance naming.
+
+![alt text](image05.png "Instance Details")
 
 **LOCAL:** Now from your local machine, SSH into the server instance.
 
