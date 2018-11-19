@@ -9,6 +9,8 @@ There are three resources you will use while interacting with a cloud instance.
 2. The application on the Instance – In our case it is Hyperledger Fabric – Latest version. I refer this as the 'instance' in the document.
 3. The Local machine through which you access the instance. I refer this to as 'local' in the document.
 
+![alt text](image01.png "Security Group")
+
 **CONSOLE:** One of the first things you do is define a security group that goes with the instance. Hyperledger Fabric is a bunch of applications that comprises the Blockchain, Kafka, Zookeeper and CouchDB database. Which means clearly that we will keep certain ports open as the network scales and accommodates more peers. Defining the port ranges may result in external communication. It requires port 22 for SSH, 80 preferably is great for HTTP and 443 for HTTPS. Additionally, you may want to open ports that may require you to communicate with CouchDB or ports that Kafka and Zookeeper.
 
 **CONSOLE:** The next thing you do is to change the password. The EC instance comes with a default password which is great as it is hard to remember and even harder to crack. But I find it easier to set the instance with a password I can remember.
