@@ -163,3 +163,40 @@ certbot renew --dry-run
 systemctl restart apache2
 ```
 
+## Install Go
+
+```
+sudo apt-get update
+sudo apt-get -y upgrade
+curl -O https://storage.googleapis.com/golang/go1.11.2.linux-amd64.tar.gz
+sudo mv go /usr/local
+sudo nano ~/.profile
+# -- add to the end
+export GOROOT=$HOME/go
+export GOPATH=$HOME/work
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export FABRIC_CFG_PATH=/home/devb/devbnj/fabric-cloud/hyperledger_fabric/root/config
+# -- added
+source ~/.profile
+# -- test go
+go version
+```
+
+##### Notes ~ For Production or Cloud Instance
+```
+Change the docker-compose.yaml file
+You fill find in fabric-samples/basic-network
+Add to each environment for every container
+      - GODEBUG=netdns=go
+      - FABRIC_LOGGING_SPEC=INFO
+```
+
+##### Notes ~ Rerunning Health-Plan on Fabric 1.3
+```
+composer network install --card PeerAdmin@hlfv1 --archiveFile health-plan@0.0.1.bna
+composer network start --networkName health-plan --networkVersion 0.0.1 --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file healthplan.card
+composer network ping --card admin@health-plan
+
+# --- Run composer on TLS
+composer-rest-server -c admin@health-plan -n never -u true -d n -t true -e /etc/tigersof.pem -k /etc/tigerof.key
+```
