@@ -10,6 +10,12 @@ docker rmi $(docker images dev-* -q)
 docker rm $(docker ps -a -q)
 docker rmi $(docker images -q)
 ```
+### Install Pre-requisites
+```
+curl -O https://hyperledger.github.io/composer/v0.19/prereqs-ubuntu.sh
+chmod u+x prereqs-ubuntu.sh
+./prereqs-ubuntu.sh
+```
 
 ### Install Hyperledger Composer
 ```
