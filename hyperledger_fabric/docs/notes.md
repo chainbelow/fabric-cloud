@@ -200,3 +200,112 @@ composer network ping --card admin@health-plan
 # --- Run composer on TLS
 composer-rest-server -c admin@health-plan -n never -u true -d n -t true -e /etc/tigersof.pem -k /etc/tigerof.key
 ```
+
+# Hyperledger Sawtooth 1.0.5
+
+### Remove old Sawtooth Installation
+```
+sudo apt-get remove --purge sawtooth
+sudo apt-get clean
+sudo -u sawtooth rm -rf /var/lib/sawtooth/*
+sudo rm /var/lib/dpkg/lock
+```
+
+## Install Fresh
+```
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 8AA7AF1F1091A5FD
+sudo add-apt-repository 'deb http://repo.sawtooth.me/ubuntu/1.0/stable xenial universe'
+
+sudo apt update
+sudo apt-get install -y sawtooth
+sudo apt search sawtooth
+sudo apt autoremove
+
+# --- Alternatively
+# sudo apt install aptitude
+# aptitude install sawtooth python3-sawtooth-*
+# aptitude search sawtooth
+# sudo apt autoremove
+```
+
+### Viewing Console Output
+To view the console output that you would see if you ran the components manually, run the following command:
+```
+sudo journalctl -f \
+    -u sawtooth-validator \
+    -u sawtooth-settings-tp \
+    -u sawtooth-poet-validator-registry-tp \
+    -u sawtooth-rest-api
+```
+
+#### Create Genesis Block
+###### The first validator created in a new network must load a genesis block on creation to enable other validators to join the network. Prior to starting the first validator, run the following commands to generate a genesis block that the first validator can load:
+```
+sawtooth keygen
+# --- it will generate dev.pub, devb.priv
+sudo sawset genesis --key ~/.sawtooth/keys/devb.priv
+# --- it will generate config-genesis.batch
+sudo -u sawtooth sawadm genesis config-genesis.batch
+# --- if required
+sudo rm /var/lib/sawtooth/genesis.batch
+# --- Start the validator:
+sudo sawadm keygen
+sudo -u sawtooth sawtooth-validator -vv
+```
+
+### Running sawtooth
+Before starting the validator component you may need to generate the validator keypairs using the following command:
+
+```
+sudo sawadm keygen --force
+### overwriting file: /etc/sawtooth/keys/validator.priv
+### overwriting file: /etc/sawtooth/keys/validator.pub
+```
+
+##### Notes ~ 
+```
+## To start a component using systemd, run the following command where COMPONENT is one of:
+
+* validator
+* rest-api
+* intkey-tp-python
+* settings-tp
+* xo-tp-python
+
+### sudo systemctl start sawtooth-COMPONENT
+sudo systemctl start sawtooth-validator
+sudo systemctl status sawtooth-validator
+### sawtooth-validator.service: Unit entered failed state.
+### sawtooth-validator.service: Failed with result 'exit-code'.
+sudo systemctl is-enabled sawtooth-validator
+### disabled
+sudo systemctl enable sawtooth-validator
+### Created symlink from /etc/systemd/system/multi-user.target.wants/sawtooth-validator.service to /lib/systemd/system/sawtooth-validator.service.
+### similarly start the rest-api
+sudo systemctl status sawtooth-rest-api
+sudo systemctl enable sawtooth-rest-api
+### tcp://localhost:4004
+```
+
+#### Configuring Sawtooth
+##### On Nov 22
+##### When a Sawtooth component starts, it looks for a TOML configuration file in the config directory (config_dir). By default, configuration files are stored in /etc/sawtooth; see Path Configuration File for more information on the config directory location.
+##### In addition, the Sawtooth log output can be configured with a log config file in TOML or YAML format. By default, Sawtooth stores error and debug log messages for each component in the log directory. For more information, see Log Configuration.
+
+```
+sudo sawadm keygen --force
+sudo sawadm genesis
+sudo sawtooth-validator -v --endpoint localhost:8800 &
+sudo sawtooth-rest-api -v &
+```
+
+##### Test
+```
+curl http://localhost:8008/blocks
+```
+
+### Make changes to Apache Configuration
+```
+sudo nano /etc/apache2/sites-enabled/000-default.conf
+sudo apachectl restart
+```
