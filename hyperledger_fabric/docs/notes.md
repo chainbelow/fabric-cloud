@@ -293,6 +293,7 @@ sudo systemctl enable sawtooth-rest-api
 ##### In addition, the Sawtooth log output can be configured with a log config file in TOML or YAML format. By default, Sawtooth stores error and debug log messages for each component in the log directory. For more information, see Log Configuration.
 
 ```
+sudo rm -fr /var/lib/sawtooth/genesis.batch 
 sudo sawadm keygen --force
 sudo sawadm genesis
 sudo sawtooth-validator -v --endpoint localhost:8800 &
