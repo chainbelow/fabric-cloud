@@ -87,3 +87,73 @@ sudo chmod 777 /var/lib/softhsm/tokens
 softhsm2-util --init-token --slot 0 --label "ForComposer" --so-pin 1234 --pin 98765432
 ```
 
+# Install Apache (Any Ubuntu 16.0.4 barebones EC Instance)
+
+```
+adduser devb
+usermod -aG sudo devb
+su - devb
+
+apt update
+apt-get install apache2
+a2enmod ssl
+a2enmod headers
+a2enmod proxy_http
+```
+
+###### Note ~
+```
+# --- here is where the htmls are:
+# ---  /var/www
+sudo chmod -R 755 /var/www
+```
+
+### Install Node.JS 8.x
+```
+cd ~
+curl -sL https://deb.nodesource.com/setup_8.x -o nodesource_setup.sh
+bash nodesource_setup.sh
+apt-get install -y nodejs
+sudo apt-get install software-properties-common
+```
+
+##### Note ~ Install this git
+```
+curl -LkSs https://api.github.com/repos/devbnj/fabric-cloud/tarball -o fabric-cloud.tar.gz
+tar -xvf fabric-cloud.tar.gz
+```
+
+### Install Node-RED
+```
+node -v
+npm install -g --unsafe-perm node-red
+# --- it will install in /root/.node-red/
+```
+
+### Install lets encrypt
+```
+sudo apt-get update
+sudo apt-get autoclean
+
+# --- ./certbot-auto
+sudo apt-get install letsencrypt
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+sudo apt-get install certbot 
+
+# --- setup chainbelow.com
+cd /etc/apache2/sites-available
+nano 000-default.conf
+systemctl restart apache2
+
+certbot certonly --webroot -w /var/www/html/chainbelow -d www.chainbelow.com
+# --- certs stored in /etc/letsencrypt
+# --- /etc/letsencrypt/live/www.chainbelow.com/cert.pem
+# --- /etc/letsencrypt/live/www.chainbelow.com/privkey.pem
+
+apt-get install python-certbot-apache
+certbot --apache -d chainbelow.com -d www.chainbelow.com
+certbot renew --dry-run
+systemctl restart apache2
+```
+
