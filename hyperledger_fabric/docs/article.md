@@ -104,6 +104,10 @@ $ sudo apt-get install software-properties-common
 ```
 
 **INSTANCE:** Download the Fabric 1.3 meant for the cloud that I have configured using Yeasy and Fabric-Samples from Hyperledger Fabric.
+```
+$ curl -LkSs https://api.github.com/repos/devbnj/fabric-cloud/tarball -o fabric-cloud.tar.gz
+$ tar -xvf fabric-cloud.tar.gz
+```
 
 **INSTANCE:** You may need Go-lang, if you want to add Smart Contracts or ChainCode.
 
