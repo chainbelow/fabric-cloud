@@ -105,6 +105,7 @@ $ sudo apt-get install software-properties-common
 
 **INSTANCE:** Download the Fabric 1.3 meant for the cloud that I have configured using Yeasy and Fabric-Samples from Hyperledger Fabric.
 ```
+$ mkdir {install-dir} && cd {install-dir}
 $ curl -LkSs https://api.github.com/repos/devbnj/fabric-cloud/tarball -o fabric-cloud.tar.gz
 $ tar -xvf fabric-cloud.tar.gz
 ```
